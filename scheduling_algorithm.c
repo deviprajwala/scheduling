@@ -22,7 +22,7 @@ void first_come_first_serve(process head);
 void shortest_job_first(process head,int n);
 void copy(process head,int n);
 void priority(process head,int n);
-
+void round_robin(process head,int n);
 
 process get_process()
 {
@@ -217,6 +217,42 @@ void priority(process head,int n)
  printf("\n");
 }
 
+void round_robin(process head,int n)
+{
+ int min=999,sum=0,i,j;
+ process cur;
+ cur=head->link;
+ while(cur!=NULL)
+ {
+  sum+=cur->time;
+  if(cur->time<min)
+  {
+   min=cur->time;
+  }
+  cur=cur->link;
+ }
+ cur=head->link;
+// printf("%d",sum);
+ for(i=1;i<=sum;i++)
+ {
+   if(cur->time>=min)
+   {
+   printf("%s",cur->name);
+   for(j=1;j<=min;j++)
+   {
+     printf("-");
+     cur->time-=1;
+   }
+   }
+   printf(" ");
+   cur=cur->link;
+   if(cur==NULL)
+   {
+    cur=head->link;
+   }
+ }
+ printf("\n");
+}
 int main()
 {
  int n;
@@ -234,5 +270,7 @@ int main()
  printf("\nPRIORITY JOB SCHEDULING\n");
  priority(head,n);
  //display(head);
+ printf("\nROUND ROBIN\n");
+ round_robin(head,n);
  return 0;
 }
