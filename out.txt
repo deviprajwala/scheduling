@@ -1,0 +1,22 @@
+Enter the number of processes:
+Name:Time:Priority:Name:Time:Priority:Name:Time:Priority:The list of processes and thier time is
+
+__________________________________________
+NAME    TIME   PRIORITY
+p3      3      1      
+p2      2      3      
+p1      1      2      
+
+__________________________________________
+
+FIRST COME FIRST SERVE
+p3---  p2--  p1-  
+3 2 1 
+
+SHORTEST JOB FIRST
+1 2 3 
+p1- p2-- p3--- 
+
+PRIORITY JOB SCHEDULING
+1 2 3 
+p3--- p1- p2-- 
