@@ -22,4 +22,4 @@ PRIORITY JOB SCHEDULING
 p3--- p1- p2-- 
 
 ROUND ROBIN
-p3- p2- p1- p3- p2-  
+p3- p2- p1- p3- p2- p3-
